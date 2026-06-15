@@ -37,7 +37,7 @@ export default async function NewsHub() {
                     />
                   </div>
                   <span className="font-heading font-bold text-primary tracking-widest uppercase opacity-80">
-                    BIT-SHIELD TACTICAL ALERT
+                     NCSA CTF
                   </span>
                 </div>
               ))}
@@ -51,7 +51,7 @@ export default async function NewsHub() {
         {/* Footer */}
         <footer className="bg-[#1d1f1f] text-outline-variant p-6 md:p-8 flex flex-col md:flex-row justify-between items-center text-xs font-mono border-t-2 border-primary mt-auto">
           <div className="font-heading text-xl font-bold text-secondary tracking-widest mb-6 md:mb-0">
-            BIT-SHIELD
+            NCSA CTF
           </div>
           <div className="flex flex-wrap justify-center gap-4 md:gap-6 mb-6 md:mb-0">
             <Link href="#" className="hover:text-white transition-colors">TERMINAL_ACCESS</Link>
@@ -60,7 +60,7 @@ export default async function NewsHub() {
             <Link href="#" className="hover:text-white transition-colors">API_DOCS</Link>
           </div>
           <div className="text-center md:text-right text-[10px] md:text-xs text-outline">
-            &copy; 198X-2024 BIT-SHIELD TACTICAL SYSTEMS. ALL RIGHTS RESERVED.
+            &copy; 2026 NCSA CTF. ALL RIGHTS RESERVED.
           </div>
         </footer>
 

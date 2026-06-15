@@ -19,7 +19,7 @@ const spaceMono = Space_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Bit-Shield Tactical",
+  title: "NCSA CTF",
   description: "High-stakes cybersecurity reporting terminal",
 };
 

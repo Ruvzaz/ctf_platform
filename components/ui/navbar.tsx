@@ -5,7 +5,7 @@ export const Navbar = ({ currentPath }: { currentPath: string }) => {
   return (
     <nav className="bg-primary text-white flex flex-col md:flex-row items-center justify-between p-4 px-6 gap-4 border-b-2 border-primary">
       <Link href="/" className="font-heading text-2xl font-bold tracking-wider w-full md:w-auto text-center md:text-left">
-        BIT-SHIELD
+        NCSA CTF
       </Link>
       <div className="hidden md:flex gap-8 font-mono text-sm tracking-widest text-outline-variant">
         <Link 
