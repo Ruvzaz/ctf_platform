@@ -39,3 +39,11 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Non-deployment folders and files
+/test/
+/.agents/
+*.md
+
+# Editor and local settings
+/.vscode/

@@ -1,0 +1,71 @@
+[
+ 
+  {
+    "id": "art-002",
+    "documentId": "strapi-doc-002",
+    "title": "Spear-Phishing Campaign Targeting APAC Financial Institutions",
+    "slug": "spear-phishing-apac-finsec",
+    "summary": "Intelligence suggests a coordinated effort by suspected state-sponsored actors to harvest credentials from key executives within the APAC banking sector. The campaign utilizes highly sophisticated localized lures...",
+    "imageUrl": "/images/cyber_map.png",
+    "publishedAt": "2026-06-15T08:15:00Z",
+    "author": {
+      "id": "auth-002",
+      "name": "INTEL_DESK_3"
+    },
+    "categories": [
+      { "id": "cat-002", "name": "CHALLENGE", "isAlert": false }
+    ],
+    "priority": "HIGH"
+  },
+  {
+    "id": "art-003",
+    "documentId": "strapi-doc-003",
+    "title": "Critical RCE Vulnerability Found in Legacy Industrial Control Systems",
+    "slug": "rce-vulnerability-legacy-ics",
+    "summary": "Security researchers have identified a zero-click Remote Code Execution (RCE) flaw in widely used legacy ICS modules. Facilities using unpatched versions are advised to disconnect affected systems from public networks immediately.",
+    "imageUrl": "/images/ransomware_alert.png",
+    "publishedAt": "2026-06-14T22:30:00Z",
+    "author": {
+      "id": "auth-003",
+      "name": "SYSTEM_ADMIN"
+    },
+    "categories": [
+      { "id": "cat-003", "name": "BOOT CAMP", "isAlert": true }
+    ],
+    "priority": "CRITICAL"
+  },
+  {
+    "id": "art-004",
+    "documentId": "strapi-doc-004",
+    "title": "DDoS Attacks on Healthcare Infrastructure Increase by 400%",
+    "slug": "ddos-attacks-healthcare",
+    "summary": "A massive botnet has been actively targeting healthcare providers across North America and Europe. The attack vectors involve high-volume volumetric attacks combined with slowloris tactics to exhaust server resources.",
+    "imageUrl": "/images/cyber_map.png",
+    "publishedAt": "2026-06-14T14:05:00Z",
+    "author": {
+      "id": "auth-004",
+      "name": "THREAT_INTEL_ALPHA"
+    },
+    "categories": [
+      { "id": "cat-004", "name": "AWARENESS", "isAlert": false }
+    ],
+    "priority": "HIGH"
+  },
+  {
+    "id": "art-005",
+    "documentId": "strapi-doc-005",
+    "title": "Analysis of the 'Void-Walker' Malware Persistence Mechanism",
+    "slug": "void-walker-malware-analysis",
+    "summary": "Deep dive into the persistence techniques of the Void-Walker malware. The payload achieves persistence by modifying UEFI firmware, making it exceptionally difficult to detect or remove using standard OS-level security tools.",
+    "imageUrl": "/images/ransomware_alert.png",
+    "publishedAt": "2026-06-13T09:12:00Z",
+    "author": {
+      "id": "auth-001",
+      "name": "GHOST_PROTOCOL"
+    },
+    "categories": [
+      { "id": "cat-005", "name": "Learning", "isAlert": false }
+    ],
+    "priority": "NORMAL"
+  }
+]
