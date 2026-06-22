@@ -37,9 +37,6 @@ export function NewsFeed({ initialArticles }: { initialArticles: Article[] }) {
             ศูนย์รวมข่าวสารความปลอดภัย<br/>
             <span className="uppercase text-3xl md:text-4xl">(CYBER NEWS HUB)</span>
           </h1>
-          <p className="font-sans text-on-surface-variant mt-2 text-sm md:text-base">
-            Real-time surveillance and cybersecurity reporting.
-          </p>
         </div>
         <div className="flex flex-wrap gap-2 font-mono text-xs font-bold uppercase">
           {CATEGORIES.map(cat => (
