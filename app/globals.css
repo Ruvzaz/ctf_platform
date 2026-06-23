@@ -59,8 +59,8 @@
   --color-surface-variant: #dde4e6;
 
   /* Fonts */
-  --font-sans: var(--font-work-sans), ui-sans-serif, system-ui, sans-serif;
-  --font-heading: var(--font-space-grotesk), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-kanit), ui-sans-serif, system-ui, sans-serif;
+  --font-heading: var(--font-kanit), ui-sans-serif, system-ui, sans-serif;
   --font-mono: var(--font-space-mono), ui-monospace, SFMono-Regular, monospace;
 
   /* Spacing */
@@ -73,8 +73,26 @@
 
 body {
   background-color: var(--color-background);
+  background-image: linear-gradient(rgba(0, 30, 64, 0.05) 1px, transparent 1px),
+  linear-gradient(90deg, rgba(0, 30, 64, 0.05) 1px, transparent 1px);
+  background-size: 20px 20px;
   color: var(--color-on-background);
   font-family: var(--font-sans);
+}
+
+.pixel-border {
+    box-shadow: 4px 4px 0px 0px rgba(0, 30, 64, 1);
+}
+
+.pixel-border-hover:hover {
+    box-shadow: 4px 4px 0px 0px rgba(188, 0, 0, 1);
+    transform: translate(-2px, -2px);
+}
+
+.thai-pixel {
+    font-family: var(--font-heading);
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
 }
 
 @keyframes marquee {

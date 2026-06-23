@@ -10,11 +10,21 @@ const CATEGORIES = ["ALL", "NEWS", "CHALLENGE", "BOOT CAMP", "AWARENESS", "LEARN
 
 export function NewsFeed({ initialArticles }: { initialArticles: Article[] }) {
   const [selectedCategory, setSelectedCategory] = useState("ALL");
+  const [currentPage, setCurrentPage] = useState(1);
+  const ITEMS_PER_PAGE = 6;
+
+  const handleCategoryChange = (cat: string) => {
+    setSelectedCategory(cat);
+    setCurrentPage(1);
+  };
 
   const filteredArticles = initialArticles.filter(article => {
     if (selectedCategory === "ALL") return true;
     return article.categories.some(cat => cat.name.toUpperCase() === selectedCategory);
   });
+
+  const totalPages = Math.max(1, Math.ceil(filteredArticles.length / ITEMS_PER_PAGE));
+  const currentArticles = filteredArticles.slice((currentPage - 1) * ITEMS_PER_PAGE, currentPage * ITEMS_PER_PAGE);
 
   const formatTimeAgo = (isoString: string) => {
     const date = new Date(isoString);
@@ -42,7 +52,7 @@ export function NewsFeed({ initialArticles }: { initialArticles: Article[] }) {
           {CATEGORIES.map(cat => (
             <button 
               key={cat}
-              onClick={() => setSelectedCategory(cat)}
+              onClick={() => handleCategoryChange(cat)}
               className={`border-2 border-primary px-3 py-1 flex items-center gap-2 transition-colors ${selectedCategory === cat ? 'bg-primary text-white' : 'bg-white text-primary hover:bg-surface-dim'}`}
             >
               <span className={`w-2 h-2 rounded-full ${selectedCategory === cat ? 'bg-white' : 'bg-primary'}`}></span> 
@@ -53,9 +63,9 @@ export function NewsFeed({ initialArticles }: { initialArticles: Article[] }) {
       </div>
 
       {/* Grid */}
-      {filteredArticles.length > 0 ? (
+      {currentArticles.length > 0 ? (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-          {filteredArticles.map((article, idx) => (
+          {currentArticles.map((article, idx) => (
             <div key={`${article.id}-${idx}`} className="border-2 border-primary border-b-8 flex flex-col bg-white hover:-translate-y-1 hover:shadow-[4px_4px_0_0_var(--color-primary)] transition-all group">
               <div className="relative w-full aspect-video border-b-2 border-primary overflow-hidden bg-surface-dim">
                 <Badge variant="alert" className="absolute top-3 left-3 z-10 !bg-secondary !text-white !border-none !text-[10px]">
@@ -98,15 +108,38 @@ export function NewsFeed({ initialArticles }: { initialArticles: Article[] }) {
       )}
 
       {/* Pagination */}
-      <div className="flex justify-center items-center gap-2 font-mono text-sm font-bold mt-16">
-        <button className="border-2 border-primary w-8 h-8 flex items-center justify-center hover:bg-surface-dim transition-colors">&lt;</button>
-        <button className="border-2 border-primary bg-primary text-white w-8 h-8 flex items-center justify-center">01</button>
-        <button className="border-2 border-primary w-8 h-8 flex items-center justify-center hover:bg-surface-dim transition-colors">02</button>
-        <button className="border-2 border-primary w-8 h-8 flex items-center justify-center hover:bg-surface-dim transition-colors">03</button>
-        <span className="px-2 text-outline">...</span>
-        <button className="border-2 border-primary w-8 h-8 flex items-center justify-center hover:bg-surface-dim transition-colors">99</button>
-        <button className="border-2 border-primary w-8 h-8 flex items-center justify-center hover:bg-surface-dim transition-colors">&gt;</button>
-      </div>
+      {totalPages > 1 && (
+        <div className="flex justify-center items-center gap-2 font-mono text-sm font-bold mt-16">
+          <button 
+            onClick={() => setCurrentPage(prev => Math.max(1, prev - 1))}
+            disabled={currentPage === 1}
+            className="border-2 border-primary w-8 h-8 flex items-center justify-center hover:bg-surface-dim transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+          >
+            &lt;
+          </button>
+          
+          {[...Array(totalPages)].map((_, i) => {
+            const pageNumber = i + 1;
+            return (
+              <button 
+                key={pageNumber}
+                onClick={() => setCurrentPage(pageNumber)}
+                className={`border-2 border-primary w-8 h-8 flex items-center justify-center transition-colors ${currentPage === pageNumber ? 'bg-primary text-white' : 'hover:bg-surface-dim'}`}
+              >
+                {String(pageNumber).padStart(2, '0')}
+              </button>
+            );
+          })}
+          
+          <button 
+            onClick={() => setCurrentPage(prev => Math.min(totalPages, prev + 1))}
+            disabled={currentPage === totalPages}
+            className="border-2 border-primary w-8 h-8 flex items-center justify-center hover:bg-surface-dim transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+          >
+            &gt;
+          </button>
+        </div>
+      )}
     </>
   );
 }

@@ -4,38 +4,28 @@ import Image from 'next/image';
 
 export const Navbar = ({ currentPath }: { currentPath: string }) => {
   return (
-    <nav className="bg-[#040c18]/80 text-white flex flex-col md:flex-row items-center justify-between p-4 px-6 gap-4 border-b border-cyan-950/50 backdrop-blur-md z-30 relative">
-      <Link href="/" className="flex items-center gap-3 w-full md:w-auto justify-center md:justify-start">
-        <div className="relative h-12 w-28 md:w-32">
-          <Image
-            src="/images/259.1.png"
-            alt="NCSA CTF Logo"
-            fill
-            className="object-contain"
-            priority
-          />
-        </div>
-      </Link>
-      <div className="flex gap-8 font-heading text-base font-medium tracking-wide">
+    <nav className="sticky top-0 w-full z-50 flex justify-between items-center px-6 h-16 bg-[var(--color-primary)] border-b-2 border-[var(--color-secondary)] shadow-[4px_4px_0px_0px_rgba(188,0,0,1)]">
+      <div className="font-heading text-[24px] font-bold tracking-tighter text-[var(--color-on-primary)] flex-1 flex items-center">
+        NCSA x CTF
+      </div>
+      <div className="hidden md:flex gap-6 justify-center">
         <Link 
           href="/" 
-          className={`transition-colors duration-200 ${currentPath === '/' ? 'text-sky-400 font-bold border-b border-sky-400 pb-0.5' : 'text-sky-400/80 hover:text-sky-300'}`}
+          className={`font-heading text-[18px] px-2 pb-1 transition-colors duration-75 hover:bg-[var(--color-secondary)] hover:text-white ${currentPath === '/' ? 'text-[var(--color-on-primary)] border-b-4 border-[var(--color-secondary-container)]' : 'text-[var(--color-on-primary-fixed-variant)]'}`}
         >
-          Home
+          HOME
         </Link>
         <Link 
           href="/news" 
-          className={`transition-colors duration-200 ${currentPath === '/news' ? 'text-red-500 font-bold border-b border-red-500 pb-0.5' : 'text-red-500/80 hover:text-red-400'}`}
+          className={`font-heading text-[18px] px-2 pb-1 transition-colors duration-75 hover:bg-[var(--color-secondary)] hover:text-white ${currentPath === '/news' ? 'text-[var(--color-on-primary)] border-b-4 border-[var(--color-secondary-container)]' : 'text-[var(--color-on-primary-fixed-variant)]'}`}
         >
-          News
+          NEWS
         </Link>
       </div>
-      <div className="w-full md:w-auto">
-        <input 
-          type="text" 
-          placeholder="SEARCH_TERMINAL..." 
-          className="bg-[#030914]/90 border border-sky-950/60 text-sky-400/80 font-mono text-xs px-4 py-2 outline-none w-full md:w-64 focus:border-sky-500/80 focus:text-sky-300 focus:bg-[#040e1c] transition-all rounded-none"
-        />
+      <div className="text-[var(--color-on-primary)] flex-1 flex justify-end">
+        <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 cursor-pointer hover:text-[var(--color-secondary)] transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+        </svg>
       </div>
     </nav>
   );

@@ -23,27 +23,7 @@ export default async function NewsHub() {
         <div className="flex-1 p-6 md:p-12">
           
           {/* Alert Banner Marquee */}
-          <div className="border-2 border-dashed border-secondary bg-white overflow-hidden mb-10 relative flex items-center h-16 group cursor-default">
-            <div className="flex w-max animate-marquee gap-12 group-hover:[animation-play-state:paused] pr-12">
-              {[...Array(100)].map((_, i) => (
-                <div key={i} className="flex items-center gap-4">
-                  <div className="relative w-8 h-8">
-                    <Image 
-                      src="/images/logo_transparent.png" 
-                      alt="Logo" 
-                      fill
-                      sizes="32px"
-                      className="object-contain mix-blend-multiply" 
-                    />
-                  </div>
-                  <span className="font-heading font-bold text-primary tracking-widest uppercase opacity-80">
-                     NCSA CTF
-                  </span>
-                </div>
-              ))}
-            </div>
-          </div>
-
+          
           <NewsFeed initialArticles={displayArticles} />
 
         </div>
@@ -51,7 +31,7 @@ export default async function NewsHub() {
         {/* Footer */}
         <footer className="bg-[#1d1f1f] text-outline-variant p-6 md:p-8 flex flex-col md:flex-row justify-between items-center text-xs font-mono border-t-2 border-primary mt-auto">
           <div className="font-heading text-xl font-bold text-secondary tracking-widest mb-6 md:mb-0">
-            NCSA CTF
+            NCSA x CTF
           </div>
           <div className="flex flex-wrap justify-center gap-4 md:gap-6 mb-6 md:mb-0">
             <Link href="#" className="hover:text-white transition-colors">TERMINAL_ACCESS</Link>

@@ -47,3 +47,4 @@ next-env.d.ts
 
 # Editor and local settings
 /.vscode/
+example.html
