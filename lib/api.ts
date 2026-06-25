@@ -46,6 +46,15 @@ function extractStrapiContent(attrs: any): string {
         if (block.type === 'quote') {
           return `<blockquote>${renderChildren(block.children)}</blockquote>`;
         }
+        if (block.type === 'image') {
+          const imgObj = block.image;
+          if (!imgObj) return "";
+          const url = imgObj.url || "";
+          const alt = imgObj.alternativeText || "";
+          if (!url) return "";
+          const fullUrl = url.startsWith('http') ? url : `${API_URL}${url}`;
+          return `<div class="my-8 flex justify-center w-full"><img src="${fullUrl}" alt="${alt}" class="w-full max-w-4xl object-contain border-2 border-primary shadow-[4px_4px_0_0_var(--color-primary)]" /></div>`;
+        }
         return "";
       }).join('\n');
     } catch (e) {
@@ -123,6 +132,7 @@ export async function getArticles(): Promise<Article[]> {
       };
     });
 
+    articles.sort((a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime());
     return articles;
   } catch (error: any) {
     console.warn("⚠️ Strapi API is unavailable or unauthorized. Falling back to mock data.");

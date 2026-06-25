@@ -97,12 +97,12 @@ export default async function ReportDetailPage({ params }: { params: any }) {
                             [&>div>p]:mb-6 [&>div>p]:text-xl 
                             [&>div>h1]:font-heading [&>div>h1]:text-4xl [&>div>h1]:font-bold [&>div>h1]:text-primary [&>div>h1]:mb-6 [&>div>h1]:mt-10
                             [&>div>h2]:font-heading [&>div>h2]:text-3xl [&>div>h2]:font-bold [&>div>h2]:text-primary [&>div>h2]:mb-4 [&>div>h2]:mt-8
-                            [&>div>h3]:font-mono [&>div>h3]:text-2xl [&>div>h3]:font-bold [&>div>h3]:text-secondary [&>div>h3]:mb-4 [&>div>h3]:mt-6
+                            [&>div>h3]:font-heading [&>div>h3]:text-2xl [&>div>h3]:font-bold [&>div>h3]:text-secondary [&>div>h3]:mb-4 [&>div>h3]:mt-6
                             [&>div>ul]:list-disc [&>div>ul]:ml-8 [&>div>ul]:mb-6 [&>div>ul>li]:mb-2
                             [&>div>ol]:list-decimal [&>div>ol]:ml-8 [&>div>ol]:mb-6 [&>div>ol>li]:mb-2
                             [&>div>a]:text-secondary [&>div>a]:font-bold [&>div>a]:underline [&>div>a]:decoration-2 [&>div>a]:underline-offset-4
                             [&>div>strong]:text-primary [&>div>strong]:font-black
-                            [&>div>blockquote]:border-l-8 [&>div>blockquote]:border-secondary [&>div>blockquote]:pl-6 [&>div>blockquote]:py-2 [&>div>blockquote]:bg-surface-dim [&>div>blockquote]:font-mono [&>div>blockquote]:text-primary [&>div>blockquote]:mb-6">
+                            [&>div>blockquote]:border-l-8 [&>div>blockquote]:border-secondary [&>div>blockquote]:pl-6 [&>div>blockquote]:py-2 [&>div>blockquote]:bg-surface-dim [&>div>blockquote]:font-heading [&>div>blockquote]:text-primary [&>div>blockquote]:mb-6">
               {article.content ? (
                 // แสดงเนื้อหา HTML ที่ถูกจัดรูปมาแล้ว
                 <div dangerouslySetInnerHTML={{ __html: article.content }} />
@@ -193,11 +193,7 @@ export default async function ReportDetailPage({ params }: { params: any }) {
           <div className="font-heading text-xl font-bold text-secondary tracking-widest mb-6 md:mb-0">
             NCSA x CTF
           </div>
-          <div className="flex flex-wrap justify-center gap-4 md:gap-6 mb-6 md:mb-0">
-            <Link href="#" className="hover:text-white transition-colors">TERMINAL_ACCESS</Link>
-            <Link href="#" className="hover:text-white transition-colors">PRIVACY_PROTOCOL</Link>
-            <Link href="#" className="hover:text-white transition-colors">ENCRYPTION_STANDARDS</Link>
-          </div>
+          
           <div className="text-center md:text-right text-[10px] md:text-xs text-outline">
             &copy; 2026 NCSA CTF. ALL RIGHTS RESERVED.
           </div>

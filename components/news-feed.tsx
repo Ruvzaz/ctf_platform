@@ -28,7 +28,7 @@ export function NewsFeed({ initialArticles }: { initialArticles: Article[] }) {
 
   const formatTimeAgo = (isoString: string) => {
     const date = new Date(isoString);
-    const now = new Date("2026-06-15T12:00:00Z");
+    const now = new Date();
     const diffMs = now.getTime() - date.getTime();
     const diffMins = Math.floor(Math.abs(diffMs) / 60000);
     

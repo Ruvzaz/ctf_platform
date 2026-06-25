@@ -33,12 +33,7 @@ export default async function NewsHub() {
           <div className="font-heading text-xl font-bold text-secondary tracking-widest mb-6 md:mb-0">
             NCSA x CTF
           </div>
-          <div className="flex flex-wrap justify-center gap-4 md:gap-6 mb-6 md:mb-0">
-            <Link href="#" className="hover:text-white transition-colors">TERMINAL_ACCESS</Link>
-            <Link href="#" className="hover:text-white transition-colors">PRIVACY_PROTOCOL</Link>
-            <Link href="#" className="hover:text-white transition-colors">ENCRYPTION_STANDARDS</Link>
-            <Link href="#" className="hover:text-white transition-colors">API_DOCS</Link>
-          </div>
+          
           <div className="text-center md:text-right text-[10px] md:text-xs text-outline">
             &copy; 2026 NCSA CTF. ALL RIGHTS RESERVED.
           </div>

@@ -7,8 +7,8 @@ import { getArticles } from "@/lib/api";
 export default async function LandingPage() {
   const articles = await getArticles();
   
-  // Use backend articles primarily
-  const displayArticles = articles;
+  // Use backend articles primarily, limited to 3 latest news
+  const displayArticles = articles.slice(0, 3);
 
   const formatDate = (isoString: string) => {
     const date = new Date(isoString);
@@ -114,7 +114,7 @@ export default async function LandingPage() {
                       {formatDate(article.publishedAt)}
                     </span>
                     <span className="font-mono text-[12px] font-bold text-[var(--color-secondary)] flex items-center gap-1">
-                      READ_INTEL 
+                      อ่านรายละเอียดเพิ่มเติม
                       <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                       </svg>
@@ -135,7 +135,7 @@ export default async function LandingPage() {
       <footer className="w-full py-8 px-8 flex flex-col md:flex-row justify-between items-center gap-4 bg-[var(--color-tertiary)] border-t-4 border-double border-[var(--color-primary)] mt-auto">
         <div className="font-heading text-xl text-[var(--color-secondary)] font-bold">NCSA x CTF</div>
         <div className="font-mono text-sm text-[var(--color-on-tertiary)] text-center md:text-right">
-          National Cyber Security Agency x Capture The Flag 2026
+          &copy; 2026 NCSA CTF. ALL RIGHTS RESERVED.
         </div>
       </footer>
     </div>
