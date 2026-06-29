@@ -30,7 +30,7 @@ export default async function LandingPage() {
               {/* Replace with actual image or keep the original logo */}
               <div className="relative w-452 h-110 mb-4">
                 <Image
-                  src="/images/259.1.png"
+                  src="/images/LandingPagePic.png"
                   alt="NCSA CTF Flag Logo"
                   fill
                   className="object-contain"
